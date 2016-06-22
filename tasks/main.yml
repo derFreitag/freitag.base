@@ -1,0 +1,19 @@
+---
+
+- name: Update
+  become: yes
+  apt:
+    update_cache=yes
+
+- name: Install system dependencies
+  become: yes
+  apt:
+    name="{{ item }}"
+    state=installed
+  with_items:
+    - vim
+    - htop
+    - iotop
+    - wget
+    - dstat
+    - strace
