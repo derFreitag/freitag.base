@@ -12,7 +12,7 @@ None
 
 Dependencies
 ------------
-None
+Depends on ``geerlingguy.ntp``.
 
 Example Playbook
 ----------------

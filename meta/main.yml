@@ -11,4 +11,5 @@ galaxy_info:
   galaxy_tags:
     - system
     - development
-  dependencies: []
+dependencies:
+  - { role: geerlingguy.ntp, ntp_timezone: Europe/Berlin }
