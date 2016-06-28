@@ -23,3 +23,10 @@
   locale_gen:
     name=de_DE.UTF-8
     state=present
+
+# XXX use the newer synatx on ansible >= 2.2.0
+- name: Set timezone to Europe/Berlin
+  become: yes
+  shell: timedatectl set-timezone Europe/Berlin
+#  timezone:
+#    name=Europe/Berlin
