@@ -25,6 +25,10 @@
     state=present
 
 # XXX use the newer synatx on ansible >= 2.2.0
+- name: Fix timezone
+  become: yes
+  shell: echo "Europe/Berlin" > /etc/timezone
+
 - name: Set timezone to Europe/Berlin
   become: yes
   shell: timedatectl set-timezone Europe/Berlin
