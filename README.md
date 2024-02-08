@@ -1,29 +1,31 @@
-freitag.base
-============
+# freitag.base
+
 Ansible role to install system wide utilities.
 
-Requirements
-------------
+## Requirements
+
 None
 
-Role Variables
---------------
+## Role Variables
+
 None
 
-Dependencies
-------------
+## Dependencies
+
 Depends on ``geerlingguy.ntp``.
 
-Example Playbook
-----------------
+## Example Playbook
+
+```yml
     - hosts: servers
       roles:
          - { role: freitag.base  }
+```
 
-License
--------
+## License
+
 GPLv3
 
-Author Information
-------------------
+## Author Information
+
 Gil Forcada Codinachs (der Freitag)
