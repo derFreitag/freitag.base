@@ -44,6 +44,7 @@ jobs:
 
       - name: Lint code.
         run: |
+          ansible-galaxy role install geerlingguy.ntp
           ansible-playbook --syntax-check ansible.yml
 
   ansible-lint:
