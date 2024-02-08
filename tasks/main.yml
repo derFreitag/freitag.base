@@ -1,14 +1,14 @@
 ---
 
 - name: Update
-  become: yes
-  apt:
-    update_cache=yes
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
 
 - name: Install system dependencies
-  become: yes
-  apt:
-    name: "{{item}}"
+  become: true
+  ansible.builtin.apt:
+    name: "{{ item }}"
     state: present
   with_items:
     - vim
@@ -19,14 +19,12 @@
     - strace
 
 - name: Install German locale
-  become: yes
-  locale_gen:
-    name=de_DE.UTF-8
-    state=present
+  become: true
+  community.general.locale_gen:
+    name: de_DE.UTF-8
+    state: present
 
-# XXX use the newer synatx on ansible >= 2.2.0
 - name: Set timezone to Europe/Berlin
-  become: yes
-  shell: timedatectl set-timezone Europe/Berlin
-#  timezone:
-#    name=Europe/Berlin
+  become: true
+  community.general.timezone:
+    name: Europe/Berlin

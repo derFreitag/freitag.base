@@ -1,15 +1,20 @@
+---
+
+dependencies:
+  - role: geerlingguy.ntp
+
 galaxy_info:
-  author: Gil Forcada
-  description: Ansible role to install system wide utilities
+  author: Gil Forcada Codinachs
+  description: Install system wide utilities
   company: der Freitag
+  role_name: base
+  namespace: freitag
   license: license (GPLv3)
-  min_ansible_version: 2.1
+  min_ansible_version: '2.2'
   platforms:
     - name: Ubuntu
       versions:
-        - xenial
+        - jammy
   galaxy_tags:
     - system
     - development
-dependencies:
-  - { role: geerlingguy.ntp, ntp_timezone: Europe/Berlin }
