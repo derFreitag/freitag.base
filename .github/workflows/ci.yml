@@ -9,21 +9,21 @@ on:
 jobs:
 
   yaml:
-    name: YAML syntax Lint
+    name: YAML lint
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the codebase.
+      - name: Check out
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Install test dependencies.
+      - name: Install dependencies
         run: pip3 install yamllint
 
-      - name: Lint code.
+      - name: Lint the code
         run: |
           yamllint */*.yml
 
@@ -31,18 +31,18 @@ jobs:
     name: ansible-playbook lint
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the codebase.
+      - name: Check out
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Install test dependencies.
+      - name: Install dependencies
         run: pip3 install ansible
 
-      - name: Lint code.
+      - name: Lint
         run: |
           ansible-galaxy role install geerlingguy.ntp
           ansible-playbook --syntax-check ansible.yml
@@ -51,17 +51,17 @@ jobs:
     name: ansible-lint
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the codebase.
+      - name: Check out
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Install test dependencies.
+      - name: Install dependencies
         run: pip3 install ansible-lint
 
-      - name: Lint code.
+      - name: Lint
         run: |
           ansible-lint .
